@@ -1,0 +1,15 @@
+{
+  "shape": [
+    841,
+    720,
+    2,
+    483
+  ],
+  "dtype": "float32",
+  "episodes": 841,
+  "training_steps": 719,
+  "terminal_step": 719,
+  "feature_sha": "682fddcbceb625b703f4c136ee43044a969b61d77deccbc48cfb239f0d4119b0",
+  "data_sha": "e40693c4769ebf3a1c454c89ee3f42bef380166361aba58bea781015a92ed77d",
+  "labels_sha": "6e7a9457b9b70671d85c0ce5378af13118cb118bf01907da365000b84a8ea337"
+}

@@ -1,0 +1,1203 @@
+{
+  "experiment_date": "2026-10-12",
+  "environments": {
+    "mobile": "one worker, five chains, 17 turns",
+    "sale": "one product, linear price, 8 ticks"
+  },
+  "training": {
+    "mobile": {
+      "episodes": 18000,
+      "states": 216,
+      "state_actions": 297,
+      "gamma": 1.0,
+      "seed": 2026101201
+    },
+    "sale": {
+      "episodes": 30000,
+      "states": 1846,
+      "state_actions": 4238,
+      "gamma": 1.0,
+      "seed": 2026101202
+    }
+  },
+  "evaluation": {
+    "mobile": {
+      "aggregates": {
+        "heuristic": {
+          "cash": {
+            "n": 400,
+            "mean": 119.375,
+            "median": 115.0,
+            "p10": 65,
+            "minimum": 65,
+            "maximum": 165
+          },
+          "unrealized_total": 0,
+          "missed_required_total": 0,
+          "elapsed_turns_total": 6710,
+          "unknown_states_total": 0,
+          "decisions_total": 2000
+        },
+        "rl": {
+          "cash": {
+            "n": 400,
+            "mean": 120.5375,
+            "median": 115.0,
+            "p10": 70,
+            "minimum": 65,
+            "maximum": 165
+          },
+          "unrealized_total": 0,
+          "missed_required_total": 0,
+          "elapsed_turns_total": 6620,
+          "unknown_states_total": 0,
+          "decisions_total": 2000
+        }
+      },
+      "comparisons": {
+        "rl_minus_heuristic": {
+          "n": 400,
+          "mean": 1.1625,
+          "median": 0.0,
+          "p10": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "higher": 69,
+          "equal": 331,
+          "lower": 0
+        }
+      }
+    },
+    "sale": {
+      "aggregates": {
+        "immediate": {
+          "cash": {
+            "n": 400,
+            "mean": 418.235,
+            "median": 420.5,
+            "p10": 316.5,
+            "minimum": 265.5,
+            "maximum": 584.5
+          },
+          "lost_units_total": 0,
+          "missing_feed_total": 0,
+          "unsold_units_total": 0,
+          "unknown_states_total": 0,
+          "decisions_total": 3200
+        },
+        "heuristic": {
+          "cash": {
+            "n": 400,
+            "mean": 432.6525,
+            "median": 426.5,
+            "p10": 322.5,
+            "minimum": 210.5,
+            "maximum": 609.5
+          },
+          "lost_units_total": 0,
+          "missing_feed_total": 0,
+          "unsold_units_total": 0,
+          "unknown_states_total": 0,
+          "decisions_total": 3200
+        },
+        "rl": {
+          "cash": {
+            "n": 400,
+            "mean": 465.02,
+            "median": 455.5,
+            "p10": 354.5,
+            "minimum": 287.5,
+            "maximum": 650.5
+          },
+          "lost_units_total": 0,
+          "missing_feed_total": 0,
+          "unsold_units_total": 0,
+          "unknown_states_total": 0,
+          "decisions_total": 3200
+        }
+      },
+      "comparisons": {
+        "rl_minus_immediate": {
+          "n": 400,
+          "mean": 46.785,
+          "median": 39.0,
+          "p10": 26.0,
+          "minimum": 17.0,
+          "maximum": 136.0,
+          "higher": 400,
+          "equal": 0,
+          "lower": 0
+        },
+        "rl_minus_heuristic": {
+          "n": 400,
+          "mean": 32.3675,
+          "median": 31.0,
+          "p10": -22.0,
+          "minimum": -30.0,
+          "maximum": 177.0,
+          "higher": 310,
+          "equal": 0,
+          "lower": 90
+        }
+      }
+    }
+  },
+  "ev_contract_cases": {
+    "Day17_existing_short_visit": {
+      "winner": "CARROT",
+      "contracts": [
+        {
+          "crop": "EMPTY",
+          "feasible": true,
+          "reasons": [],
+          "cash_net": 0.0,
+          "score": 0.0,
+          "actions": [],
+          "harvests": [],
+          "labor": 0,
+          "seed_cost": 0
+        },
+        {
+          "crop": "WHEAT",
+          "feasible": true,
+          "reasons": [],
+          "first_harvest_day": 19,
+          "actions": [
+            {
+              "day": 17,
+              "op": "PLANT"
+            },
+            {
+              "day": 17,
+              "op": "WATER"
+            },
+            {
+              "day": 18,
+              "op": "WATER"
+            },
+            {
+              "day": 19,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "HARVEST"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 20,
+              "units": 3,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 10,
+          "labor_by_day": {
+            "17": 4,
+            "18": 3,
+            "19": 3,
+            "20": 8
+          },
+          "labor": 18,
+          "scenario_receipts": [
+            93,
+            73,
+            66
+          ],
+          "cash_net": 67.33333333333333,
+          "score": 13.333333333333329,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "empty tile"
+        },
+        {
+          "crop": "CARROT",
+          "feasible": true,
+          "reasons": [],
+          "first_harvest_day": 19,
+          "actions": [
+            {
+              "day": 17,
+              "op": "PLANT"
+            },
+            {
+              "day": 17,
+              "op": "WATER"
+            },
+            {
+              "day": 18,
+              "op": "WATER"
+            },
+            {
+              "day": 19,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "HARVEST"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 20,
+              "units": 3,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 20,
+          "labor_by_day": {
+            "17": 4,
+            "18": 3,
+            "19": 3,
+            "20": 8
+          },
+          "labor": 18,
+          "scenario_receipts": [
+            114,
+            102,
+            84
+          ],
+          "cash_net": 80,
+          "score": 26,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "empty tile"
+        },
+        {
+          "crop": "TOMATO",
+          "feasible": false,
+          "reasons": [
+            "Day21没有区域访问",
+            "Day22没有区域访问",
+            "Day23没有区域访问",
+            "Day24没有区域访问",
+            "Day25没有区域访问",
+            "Day26没有区域访问",
+            "Day27没有区域访问",
+            "Day28没有区域访问",
+            "Day29没有区域访问",
+            "Day30没有区域访问"
+          ],
+          "first_harvest_day": 25,
+          "actions": [
+            {
+              "day": 17,
+              "op": "PLANT"
+            },
+            {
+              "day": 17,
+              "op": "WATER"
+            },
+            {
+              "day": 18,
+              "op": "WATER"
+            },
+            {
+              "day": 19,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "WATER"
+            },
+            {
+              "day": 21,
+              "op": "WATER"
+            },
+            {
+              "day": 22,
+              "op": "WATER"
+            },
+            {
+              "day": 23,
+              "op": "WATER"
+            },
+            {
+              "day": 24,
+              "op": "WATER"
+            },
+            {
+              "day": 25,
+              "op": "WATER"
+            },
+            {
+              "day": 25,
+              "op": "HARVEST"
+            },
+            {
+              "day": 26,
+              "op": "WATER"
+            },
+            {
+              "day": 26,
+              "op": "HARVEST"
+            },
+            {
+              "day": 27,
+              "op": "WATER"
+            },
+            {
+              "day": 27,
+              "op": "HARVEST"
+            },
+            {
+              "day": 28,
+              "op": "WATER"
+            },
+            {
+              "day": 28,
+              "op": "HARVEST"
+            },
+            {
+              "day": 29,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "WATER"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 25,
+              "units": 1,
+              "assumed_unload_hour": 18
+            },
+            {
+              "day": 26,
+              "units": 1,
+              "assumed_unload_hour": 18
+            },
+            {
+              "day": 27,
+              "units": 1,
+              "assumed_unload_hour": 18
+            },
+            {
+              "day": 28,
+              "units": 1,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 50,
+          "labor_by_day": {
+            "17": 4,
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "21": 3,
+            "22": 3,
+            "23": 3,
+            "24": 3,
+            "25": 8,
+            "26": 8,
+            "27": 8,
+            "28": 8,
+            "29": 3,
+            "30": 3
+          },
+          "labor": 63,
+          "scenario_receipts": [
+            259,
+            229,
+            175
+          ],
+          "cash_net": 171,
+          "score": -18,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "standing crop"
+        },
+        {
+          "crop": "STRAWBERRY",
+          "feasible": false,
+          "reasons": [
+            "Day21没有区域访问",
+            "Day22没有区域访问",
+            "Day23没有区域访问",
+            "Day24没有区域访问",
+            "Day25没有区域访问",
+            "Day26没有区域访问",
+            "Day27没有区域访问",
+            "Day28没有区域访问",
+            "Day29没有区域访问",
+            "Day30没有区域访问"
+          ],
+          "first_harvest_day": 27,
+          "actions": [
+            {
+              "day": 17,
+              "op": "PLANT"
+            },
+            {
+              "day": 17,
+              "op": "WATER"
+            },
+            {
+              "day": 18,
+              "op": "WATER"
+            },
+            {
+              "day": 19,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "WATER"
+            },
+            {
+              "day": 21,
+              "op": "WATER"
+            },
+            {
+              "day": 22,
+              "op": "WATER"
+            },
+            {
+              "day": 23,
+              "op": "WATER"
+            },
+            {
+              "day": 24,
+              "op": "WATER"
+            },
+            {
+              "day": 25,
+              "op": "WATER"
+            },
+            {
+              "day": 26,
+              "op": "WATER"
+            },
+            {
+              "day": 27,
+              "op": "WATER"
+            },
+            {
+              "day": 27,
+              "op": "HARVEST"
+            },
+            {
+              "day": 28,
+              "op": "WATER"
+            },
+            {
+              "day": 29,
+              "op": "WATER"
+            },
+            {
+              "day": 29,
+              "op": "HARVEST"
+            },
+            {
+              "day": 30,
+              "op": "WATER"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 27,
+              "units": 1,
+              "assumed_unload_hour": 18
+            },
+            {
+              "day": 29,
+              "units": 1,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 100,
+          "labor_by_day": {
+            "17": 4,
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "21": 3,
+            "22": 3,
+            "23": 3,
+            "24": 3,
+            "25": 3,
+            "26": 3,
+            "27": 8,
+            "28": 3,
+            "29": 8,
+            "30": 3
+          },
+          "labor": 53,
+          "scenario_receipts": [
+            345,
+            238,
+            84
+          ],
+          "cash_net": 122.33333333333334,
+          "score": -36.66666666666666,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "standing crop"
+        }
+      ]
+    },
+    "Day17_full_lifecycle_visit": {
+      "winner": "CARROT",
+      "contracts": [
+        {
+          "crop": "EMPTY",
+          "feasible": true,
+          "reasons": [],
+          "cash_net": 0.0,
+          "score": 0.0,
+          "actions": [],
+          "harvests": [],
+          "labor": 0,
+          "seed_cost": 0
+        },
+        {
+          "crop": "WHEAT",
+          "feasible": true,
+          "reasons": [],
+          "first_harvest_day": 19,
+          "actions": [
+            {
+              "day": 17,
+              "op": "PLANT"
+            },
+            {
+              "day": 17,
+              "op": "WATER"
+            },
+            {
+              "day": 18,
+              "op": "WATER"
+            },
+            {
+              "day": 19,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "HARVEST"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 20,
+              "units": 3,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 10,
+          "labor_by_day": {
+            "17": 4,
+            "18": 3,
+            "19": 3,
+            "20": 8
+          },
+          "labor": 18,
+          "scenario_receipts": [
+            93,
+            73,
+            66
+          ],
+          "cash_net": 67.33333333333333,
+          "score": 13.333333333333329,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "empty tile"
+        },
+        {
+          "crop": "CARROT",
+          "feasible": true,
+          "reasons": [],
+          "first_harvest_day": 19,
+          "actions": [
+            {
+              "day": 17,
+              "op": "PLANT"
+            },
+            {
+              "day": 17,
+              "op": "WATER"
+            },
+            {
+              "day": 18,
+              "op": "WATER"
+            },
+            {
+              "day": 19,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "HARVEST"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 20,
+              "units": 3,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 20,
+          "labor_by_day": {
+            "17": 4,
+            "18": 3,
+            "19": 3,
+            "20": 8
+          },
+          "labor": 18,
+          "scenario_receipts": [
+            114,
+            102,
+            84
+          ],
+          "cash_net": 80,
+          "score": 26,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "empty tile"
+        },
+        {
+          "crop": "TOMATO",
+          "feasible": true,
+          "reasons": [],
+          "first_harvest_day": 25,
+          "actions": [
+            {
+              "day": 17,
+              "op": "PLANT"
+            },
+            {
+              "day": 17,
+              "op": "WATER"
+            },
+            {
+              "day": 18,
+              "op": "WATER"
+            },
+            {
+              "day": 19,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "WATER"
+            },
+            {
+              "day": 21,
+              "op": "WATER"
+            },
+            {
+              "day": 22,
+              "op": "WATER"
+            },
+            {
+              "day": 23,
+              "op": "WATER"
+            },
+            {
+              "day": 24,
+              "op": "WATER"
+            },
+            {
+              "day": 25,
+              "op": "WATER"
+            },
+            {
+              "day": 25,
+              "op": "HARVEST"
+            },
+            {
+              "day": 26,
+              "op": "WATER"
+            },
+            {
+              "day": 26,
+              "op": "HARVEST"
+            },
+            {
+              "day": 27,
+              "op": "WATER"
+            },
+            {
+              "day": 27,
+              "op": "HARVEST"
+            },
+            {
+              "day": 28,
+              "op": "WATER"
+            },
+            {
+              "day": 28,
+              "op": "HARVEST"
+            },
+            {
+              "day": 29,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "WATER"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 25,
+              "units": 1,
+              "assumed_unload_hour": 18
+            },
+            {
+              "day": 26,
+              "units": 1,
+              "assumed_unload_hour": 18
+            },
+            {
+              "day": 27,
+              "units": 1,
+              "assumed_unload_hour": 18
+            },
+            {
+              "day": 28,
+              "units": 1,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 50,
+          "labor_by_day": {
+            "17": 4,
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "21": 3,
+            "22": 3,
+            "23": 3,
+            "24": 3,
+            "25": 8,
+            "26": 8,
+            "27": 8,
+            "28": 8,
+            "29": 3,
+            "30": 3
+          },
+          "labor": 63,
+          "scenario_receipts": [
+            259,
+            229,
+            175
+          ],
+          "cash_net": 171,
+          "score": -18,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "standing crop"
+        },
+        {
+          "crop": "STRAWBERRY",
+          "feasible": true,
+          "reasons": [],
+          "first_harvest_day": 27,
+          "actions": [
+            {
+              "day": 17,
+              "op": "PLANT"
+            },
+            {
+              "day": 17,
+              "op": "WATER"
+            },
+            {
+              "day": 18,
+              "op": "WATER"
+            },
+            {
+              "day": 19,
+              "op": "WATER"
+            },
+            {
+              "day": 20,
+              "op": "WATER"
+            },
+            {
+              "day": 21,
+              "op": "WATER"
+            },
+            {
+              "day": 22,
+              "op": "WATER"
+            },
+            {
+              "day": 23,
+              "op": "WATER"
+            },
+            {
+              "day": 24,
+              "op": "WATER"
+            },
+            {
+              "day": 25,
+              "op": "WATER"
+            },
+            {
+              "day": 26,
+              "op": "WATER"
+            },
+            {
+              "day": 27,
+              "op": "WATER"
+            },
+            {
+              "day": 27,
+              "op": "HARVEST"
+            },
+            {
+              "day": 28,
+              "op": "WATER"
+            },
+            {
+              "day": 29,
+              "op": "WATER"
+            },
+            {
+              "day": 29,
+              "op": "HARVEST"
+            },
+            {
+              "day": 30,
+              "op": "WATER"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 27,
+              "units": 1,
+              "assumed_unload_hour": 18
+            },
+            {
+              "day": 29,
+              "units": 1,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 100,
+          "labor_by_day": {
+            "17": 4,
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "21": 3,
+            "22": 3,
+            "23": 3,
+            "24": 3,
+            "25": 3,
+            "26": 3,
+            "27": 8,
+            "28": 3,
+            "29": 8,
+            "30": 3
+          },
+          "labor": 53,
+          "scenario_receipts": [
+            345,
+            238,
+            84
+          ],
+          "cash_net": 122.33333333333334,
+          "score": -36.66666666666666,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "standing crop"
+        }
+      ]
+    },
+    "Day28_near_shed": {
+      "winner": "CARROT",
+      "contracts": [
+        {
+          "crop": "EMPTY",
+          "feasible": true,
+          "reasons": [],
+          "cash_net": 0.0,
+          "score": 0.0,
+          "actions": [],
+          "harvests": [],
+          "labor": 0,
+          "seed_cost": 0
+        },
+        {
+          "crop": "WHEAT",
+          "feasible": true,
+          "reasons": [],
+          "first_harvest_day": 30,
+          "actions": [
+            {
+              "day": 28,
+              "op": "PLANT"
+            },
+            {
+              "day": 28,
+              "op": "WATER"
+            },
+            {
+              "day": 29,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "HARVEST"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 30,
+              "units": 2,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 10,
+          "labor_by_day": {
+            "28": 4,
+            "29": 3,
+            "30": 8
+          },
+          "labor": 15,
+          "scenario_receipts": [
+            62,
+            49,
+            44
+          ],
+          "cash_net": 41.666666666666664,
+          "score": -3.3333333333333357,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "empty tile"
+        },
+        {
+          "crop": "CARROT",
+          "feasible": true,
+          "reasons": [],
+          "first_harvest_day": 30,
+          "actions": [
+            {
+              "day": 28,
+              "op": "PLANT"
+            },
+            {
+              "day": 28,
+              "op": "WATER"
+            },
+            {
+              "day": 29,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "HARVEST"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 30,
+              "units": 2,
+              "assumed_unload_hour": 18
+            }
+          ],
+          "seed_cost": 20,
+          "labor_by_day": {
+            "28": 4,
+            "29": 3,
+            "30": 8
+          },
+          "labor": 15,
+          "scenario_receipts": [
+            76,
+            69,
+            56
+          ],
+          "cash_net": 47,
+          "score": 2,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "empty tile"
+        },
+        {
+          "crop": "TOMATO",
+          "feasible": false,
+          "reasons": [
+            "首次成熟晚于终局"
+          ],
+          "first_harvest_day": 36,
+          "actions": [],
+          "harvests": []
+        },
+        {
+          "crop": "STRAWBERRY",
+          "feasible": false,
+          "reasons": [
+            "首次成熟晚于终局"
+          ],
+          "first_harvest_day": 38,
+          "actions": [],
+          "harvests": []
+        }
+      ]
+    },
+    "Day28_far_corner": {
+      "winner": "EMPTY",
+      "contracts": [
+        {
+          "crop": "EMPTY",
+          "feasible": true,
+          "reasons": [],
+          "cash_net": 0.0,
+          "score": 0.0,
+          "actions": [],
+          "harvests": [],
+          "labor": 0,
+          "seed_cost": 0
+        },
+        {
+          "crop": "WHEAT",
+          "feasible": false,
+          "reasons": [
+            "Day30劳动不足:需要14,可用12",
+            "运输不能在兑现截止前完成"
+          ],
+          "first_harvest_day": 30,
+          "actions": [
+            {
+              "day": 28,
+              "op": "PLANT"
+            },
+            {
+              "day": 28,
+              "op": "WATER"
+            },
+            {
+              "day": 29,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "HARVEST"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 30,
+              "units": 2,
+              "assumed_unload_hour": 24
+            }
+          ],
+          "seed_cost": 10,
+          "labor_by_day": {
+            "28": 4,
+            "29": 3,
+            "30": 14
+          },
+          "labor": 21,
+          "scenario_receipts": [
+            62,
+            49,
+            44
+          ],
+          "cash_net": 41.666666666666664,
+          "score": -21.333333333333336,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "empty tile"
+        },
+        {
+          "crop": "CARROT",
+          "feasible": false,
+          "reasons": [
+            "Day30劳动不足:需要14,可用12",
+            "运输不能在兑现截止前完成"
+          ],
+          "first_harvest_day": 30,
+          "actions": [
+            {
+              "day": 28,
+              "op": "PLANT"
+            },
+            {
+              "day": 28,
+              "op": "WATER"
+            },
+            {
+              "day": 29,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "WATER"
+            },
+            {
+              "day": 30,
+              "op": "HARVEST"
+            }
+          ],
+          "harvests": [
+            {
+              "day": 30,
+              "units": 2,
+              "assumed_unload_hour": 24
+            }
+          ],
+          "seed_cost": 20,
+          "labor_by_day": {
+            "28": 4,
+            "29": 3,
+            "30": 14
+          },
+          "labor": 21,
+          "scenario_receipts": [
+            76,
+            69,
+            56
+          ],
+          "cash_net": 47,
+          "score": -16,
+          "shadow_price_per_turn": 3,
+          "post_harvest": "empty tile"
+        },
+        {
+          "crop": "TOMATO",
+          "feasible": false,
+          "reasons": [
+            "首次成熟晚于终局"
+          ],
+          "first_harvest_day": 36,
+          "actions": [],
+          "harvests": []
+        },
+        {
+          "crop": "STRAWBERRY",
+          "feasible": false,
+          "reasons": [
+            "首次成熟晚于终局"
+          ],
+          "first_harvest_day": 38,
+          "actions": [],
+          "harvests": []
+        }
+      ]
+    }
+  }
+}

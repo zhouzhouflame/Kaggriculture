@@ -1,0 +1,71 @@
+{
+  "selection": "smallest episode_id within each existing split; fixed steps, both seats",
+  "steps": [
+    0,
+    263,
+    264,
+    384,
+    385,
+    696,
+    718,
+    719
+  ],
+  "seats": [
+    0,
+    1
+  ],
+  "sample_count": 48,
+  "full_shape": [
+    841,
+    720,
+    2,
+    483
+  ],
+  "feature_dtype": "float32",
+  "terminal_step": 719,
+  "provenance": [
+    {
+      "episode_id": "112517734",
+      "split": "train",
+      "episode_index": 1,
+      "replay_sha256": "2d39b6824fd8d51a18c2ca78d293b3664fcdaae0098bb0d9077000ad9ac5fec6",
+      "snapshot_payload_sha256": "5557f270baa5b08f78510020e5745f0188c3ac3f75d83ced10535c75f6f7f87a"
+    },
+    {
+      "episode_id": "112516288",
+      "split": "development",
+      "episode_index": 0,
+      "replay_sha256": "ebc664399fbe6e7c23748228e13093a4b0b6800af3c0a32e46614966b554ce3e",
+      "snapshot_payload_sha256": "06d04de27cfa4506f0f3983fb6207aab9ead57ee46469b7e07e35aeee8f2d8ab"
+    },
+    {
+      "episode_id": "112518940",
+      "split": "confirmation",
+      "episode_index": 2,
+      "replay_sha256": "19d4a55820fb6ef282a5dad28a7813321187d5b090f329147f9b4754e9f66034",
+      "snapshot_payload_sha256": "7b1ce3f71a6e4ee289a504819fb2a9dd4551e4eae494a656b399b942adee0c7d"
+    }
+  ],
+  "files": {
+    "configurations.json": {
+      "bytes": 1251,
+      "sha256": "2339c871387bb692ecd14c7506bedcb5e6cf7ce53e69b31e1543e28153cfe4b4"
+    },
+    "feature_names.json": {
+      "bytes": 14700,
+      "sha256": "c7cd12706f0d7ce0ec6cbe65c1c8bc2ff173ba3af486c1d52e76af2837181398"
+    },
+    "features.jsonl": {
+      "bytes": 109561,
+      "sha256": "c762e5f3dfac68371a1d2ea67a184d0cdb92e57950355034e6313aa3a124da00"
+    },
+    "labels.jsonl": {
+      "bytes": 3954,
+      "sha256": "148ed0fd837424ce1c32ca4aa3040f1129fbe26b127f7e9ca6ed6c68d9ed59ba"
+    },
+    "observations.jsonl": {
+      "bytes": 847193,
+      "sha256": "ef74ecb52c3beb76d814f926640d4c68ea78926395fe76810944fe296b5cc503"
+    }
+  }
+}

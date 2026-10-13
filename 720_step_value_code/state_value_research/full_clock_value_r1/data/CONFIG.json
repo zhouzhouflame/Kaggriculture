@@ -1,0 +1,8 @@
+{
+  "builder_sha": "6aa11e07e5d25fcff2a60145403c6316add715aeca0fa7babf593505c3fbc4c6",
+  "features_sha": "db9096ab7cd224c950136551c1c39fe9f513140652e24c0b426e5444d5ecdd95",
+  "biology_sha": "962de72b570d3c98be2202b92113aad07253bb46a89de5977a17618bef18fdb2",
+  "market_sha": "8a9c44cbb5600ca2aa9e48de4bee2a3d1b799a885161b16990fe66540ce93902",
+  "corpus_manifest_sha": "32549b7125825585b18e4ab6a28b65a88a253af9f35e10427917d1b493372484",
+  "scenarios": 16
+}

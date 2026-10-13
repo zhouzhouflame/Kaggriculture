@@ -1,0 +1,6 @@
+# Recorded original environment, Python 3.11.16; not a clean-install test.
+numpy==2.4.6
+catboost==1.2.8
+joblib==1.6.0
+scipy==1.17.1
+scikit-learn==1.9.1
